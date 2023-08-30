@@ -17,6 +17,7 @@ public abstract class BaseTest implements Logging {
 	protected WebDriver driver;
 	protected Validate validate;
 	protected Waits wait;
+	protected SoftAssert asserts;
 
 	
 	@BeforeMethod
@@ -28,6 +29,7 @@ public abstract class BaseTest implements Logging {
 		
 		driver = this.getDriver();
 		validate = new Validate(this.getDriver());
+		asserts = new SoftAssert()
 		
 		driver.navigate().to(Constants.getContextUrl());
 	}
