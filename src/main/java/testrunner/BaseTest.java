@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import seleniumutils.Waits;
 import utils.Constants;
+import org.testng.asserts.*;
 
 @Listeners(TestMethodListener.class)
 public abstract class BaseTest implements Logging {
