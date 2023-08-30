@@ -10,6 +10,7 @@ import org.testng.annotations.*;
 import org.testng.asserts.*;
 import seleniumutils.Waits;
 import utils.Constants;
+import org.testng.asserts.*;
 
 @Listeners(TestMethodListener.class)
 public abstract class BaseTest implements Logging {
@@ -30,6 +31,7 @@ public abstract class BaseTest implements Logging {
 		asserts = new SoftAssert();
 		driver = this.getDriver();
 		validate = new Validate(this.getDriver());
+		asserts = new SoftAssert();
 		
 		driver.navigate().to(Constants.getContextUrl());
 	}
