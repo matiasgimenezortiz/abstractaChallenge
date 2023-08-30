@@ -29,7 +29,7 @@ public abstract class BaseTest implements Logging {
 		
 		driver = this.getDriver();
 		validate = new Validate(this.getDriver());
-		asserts = new SoftAssert()
+		asserts = new SoftAssert();
 		
 		driver.navigate().to(Constants.getContextUrl());
 	}
