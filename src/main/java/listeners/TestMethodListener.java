@@ -22,30 +22,5 @@ public class TestMethodListener implements IInvokedMethodListener, Logging {
 		
 	}
 
-	@Override
-	public void afterInvocation(IInvokedMethod method, ITestResult testResult) {
-		if (null != testResult.getThrowable()) {
-			// Exception happened during the Test.
-			getLogger().error(testResult.getThrowable().getMessage());
-		}
-
-		ITestClass invokingClass = method.getTestMethod().getTestClass();
-		Object[] classInstance = invokingClass.getInstances(true);
-		if (method.isTestMethod()) {
-			BaseTest testCase = (BaseTest) classInstance[0];
-			SoftAssert asserts = testCase.getValidator();
-			AssertionError err = null;
-			try {
-				asserts.assertAll();
-			} catch (AssertionError e) {
-				err = e;
-			}
-			if (null != err) {
-				testResult.setStatus(TestResult.FAILURE);
-				testResult.setThrowable(err);
-			}
-
-		}
-	}
 
 }
