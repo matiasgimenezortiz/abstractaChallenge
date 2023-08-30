@@ -24,8 +24,8 @@ public class ChromeDriverManager extends DriverManager {
 	private ChromeOptions getChromeOptions() {
 		ChromeOptions options = new ChromeOptions();
 
-		//options.addArguments("--remote-allow-origins=*");
-        //options.addArguments("--disable-notifications");
+		options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--disable-notifications");
         options.addArguments("--start-maximized");
         options.addArguments("--disable-features=EnableEphemeralFlashPermission");
         // Disable extensions and hide infobars

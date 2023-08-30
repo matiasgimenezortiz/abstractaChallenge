@@ -7,6 +7,7 @@ import listeners.TestMethodListener;
 import logging.Logging;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
+import org.testng.asserts.*;
 import seleniumutils.Waits;
 import utils.Constants;
 
@@ -17,6 +18,7 @@ public abstract class BaseTest implements Logging {
 	protected WebDriver driver;
 	protected Validate validate;
 	protected Waits wait;
+	protected SoftAssert asserts;
 
 	
 	@BeforeMethod
@@ -25,7 +27,7 @@ public abstract class BaseTest implements Logging {
 		getLogger().info("Starting a Selenium WebDriver instance.");
 
 		initializeDriverManager(driverName);
-		
+		asserts = new SoftAssert();
 		driver = this.getDriver();
 		validate = new Validate(this.getDriver());
 		
