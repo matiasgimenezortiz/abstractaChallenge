@@ -29,6 +29,7 @@ public class FirefoxDriverManager extends DriverManager {
         options.addArguments("--disable-features=EnableEphemeralFlashPermission");
         // Disable extensions and hide infobars
         options.addArguments("--disable-infobars");
+		options.addArguments("--headless");
 
 		return options;
 	}
